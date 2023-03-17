@@ -8,12 +8,15 @@ export const setLoading = (bool) => ({
     payload: bool,
 });
 
-export const fetchPizzas = (category,sorted) => (dispatch) => {
+export const fetchPizzas = (category, sorted) => (dispatch) => {
     const fetchCategory = category === null ? "" : `category=${category}`;
-    const fetchSort = `_sort=${sorted}&_order=asc`
+    const fetchSort = `_sort=${sorted}&_order=asc`;
     dispatch(setLoading(false));
     axios
-        .get(`/pizzas?${fetchCategory}&${fetchSort}`)
+        .get(
+            `https://63f9de3e897af748dcc4cb3c.mockapi.io/items
+?${fetchCategory}&${fetchSort}`
+        )
         .then((res) => dispatch(setPizzas(res.data)));
     dispatch(setLoading(true));
 };

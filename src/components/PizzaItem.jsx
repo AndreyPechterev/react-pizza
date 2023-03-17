@@ -12,9 +12,8 @@ function PizzaItem({
     types,
     priceAll,
     addPizza,
-    addedCount
+    addedCount,
 }) {
-    console.log(typeof addedCount)
     const [activeSize, setActiveSize] = React.useState(sizes[0]);
     const [activeType, setActiveType] = React.useState(types[0]);
     const handleAddPizza = () => {

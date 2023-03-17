@@ -18,11 +18,9 @@ function Home() {
     const { items, isLoading } = useSelector((state) => state.pizzas);
     const { category, sortBy } = useSelector((state) => state.filters);
     const cartItems = useSelector((state) => state.cart.items);
-
     React.useEffect(() => {
         dispatch(fetchPizzas(category, sortBy));
     }, [category, sortBy]);
-
     const onSelectCategory = React.useCallback((index) => {
         dispatch(setCategory(index));
     }, []);
