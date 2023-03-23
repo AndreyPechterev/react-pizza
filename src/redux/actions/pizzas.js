@@ -14,7 +14,7 @@ export const fetchPizzas = (category, sorted) => (dispatch) => {
     dispatch(setLoading(false));
     axios
         .get(
-            `https://63f9de3e897af748dcc4cb3c.mockapi.io/items
+            `http://localhost:3001/pizzas
 ?${fetchCategory}&${fetchSort}`
         )
         .then((res) => dispatch(setPizzas(res.data)));

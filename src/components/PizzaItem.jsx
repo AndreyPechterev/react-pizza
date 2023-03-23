@@ -6,8 +6,6 @@ function PizzaItem({
     id,
     imageUrl,
     name,
-    price,
-    rating,
     sizes,
     types,
     priceAll,
@@ -16,6 +14,7 @@ function PizzaItem({
 }) {
     const [activeSize, setActiveSize] = React.useState(sizes[0]);
     const [activeType, setActiveType] = React.useState(types[0]);
+  
     const handleAddPizza = () => {
         addPizza({
             id,

@@ -56,6 +56,7 @@ function Home() {
                               .map((_, index) => <FakePizza key={index} />)
                         : items.map((pizza) => (
                               <PizzaItem
+                                    cartItems={cartItems}
                                   {...pizza}
                                   addedCount={cartItems[pizza.id]?.totalCount}
                                   key={pizza.id}
