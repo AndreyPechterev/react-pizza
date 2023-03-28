@@ -10,11 +10,11 @@ export const setLoading = (bool) => ({
 
 export const fetchPizzas = (category, sorted) => (dispatch) => {
     const fetchCategory = category === null ? "" : `category=${category}`;
-    const fetchSort = `_sort=${sorted}&_order=asc`;
+    const fetchSort = `sortBy=${sorted}&order=asc`;
     dispatch(setLoading(false));
     axios
         .get(
-            `http://localhost:3001/pizzas
+            `https://63f9de3e897af748dcc4cb3c.mockapi.io/items
 ?${fetchCategory}&${fetchSort}`
         )
         .then((res) => dispatch(setPizzas(res.data)));
